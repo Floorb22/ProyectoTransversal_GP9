@@ -20,7 +20,9 @@ public class alumnoData {
     public void guardarAlumno (alumno alumno){
         String sql = "Insert into alumno (dni, apellido, nombre, fechaNac, estado)" + "VALUES (?,?,? ,? ,?)";
     }
+    
+
+}
    
     
-    PreparedStatement ps = con.preparedStatement (sql,Statement.RETURN_GENERATED_KEYS  );
-}
+ 
