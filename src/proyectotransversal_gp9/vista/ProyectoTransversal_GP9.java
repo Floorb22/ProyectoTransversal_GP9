@@ -1,7 +1,7 @@
 package proyectotransversal_gp9.vista;
 
 import java.sql.Connection;
-import proyectotransversal_gp9.modelo.conexion;
+import proyectotransversal_gp9.modelo.Conexion;
 
 /**
  *
@@ -11,7 +11,7 @@ public class ProyectoTransversal_GP9 {
 
     public static void main(String[] args) {
         
-        Connection con= conexion.getConexion();
+        Connection con= Conexion.getConexion();
     }
     
 }
