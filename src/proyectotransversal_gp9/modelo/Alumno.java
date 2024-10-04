@@ -6,7 +6,7 @@ import java.time.LocalDate;
  *
  * @author ACER
  */
-public class alumno {
+public class Alumno {
     private int idAlumno;
     private int dni;
     private String apellido;
@@ -14,10 +14,10 @@ public class alumno {
     private LocalDate fechaNac;
     private boolean estado;
 
-    public alumno() {
+    public Alumno() {
     }
 
-    public alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
+    public Alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
         this.idAlumno = idAlumno;
         this.dni = dni;
         this.apellido = apellido;
@@ -26,7 +26,7 @@ public class alumno {
         this.estado = estado;
     }
 
-    public alumno(int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
+    public Alumno(int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
