@@ -16,13 +16,14 @@ public class ProyectoTransversal_GP9 {
     public static void main(String[] args) {
         
         Connection con= Conexion.getConexion();
-        Alumno alumno1 = new Alumno(12345618, "Badiali", "Florencia", LocalDate.of(2000, Month.MARCH, 15), true);
-        Alumno alumno2 = new Alumno( 12345619, "Cordoba", "Mercedes", LocalDate.of(1998, Month.MARCH, 1), true);
+       /* Alumno alumno1 = new Alumno(12345618, "Badiali", "Florencia", LocalDate.of(2000, Month.MARCH, 15), true);
+        Alumno alumno2 = new Alumno( 12345619, "Cordoba", "Mercedes", LocalDate.of(1998, Month.MARCH, 1), true);*/
+       Alumno alumno3=new Alumno(23562452,"Herrera","Agustin",LocalDate.of(1996, Month.APRIL, 14),true);
         AlumnoData a = new AlumnoData();
         
-        a.guardarAlumno(alumno1);
-        a.guardarAlumno(alumno2);
-        a.listarAlumno();
+        /*a.guardarAlumno(alumno1);
+        a.guardarAlumno(alumno2);*/
+        a.guardarAlumno(alumno3);
     }
     
 }
