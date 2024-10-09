@@ -39,7 +39,7 @@ public class AlumnoData {
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
-                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setIdAlumno(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Alumno añadido con éxito");
             }
             ps.close();
@@ -51,7 +51,7 @@ public class AlumnoData {
     }
     public Alumno buscarAlumno(int idAlumno) {
         Alumno alumno = null;
-        String sql = "SELECT dni,apellido,nombre,fechaNac, FROM alumno WHERE idAlumno=? AND estado=1";
+        String sql = "SELECT dni,apellido,nombre,fechaNacimiento FROM alumno WHERE idAlumno=? AND estado=1";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -80,7 +80,7 @@ public class AlumnoData {
 
     public Alumno buscarAlumnoPorDni(int dni){
     Alumno alumno=null;
-    String sql="SELECT idAlumno,dni,apellido,nombre,fechaNacimiento FROM alumno WHERE dni? AND estado=1 ";
+    String sql="SELECT idAlumno,dni,apellido,nombre,fechaNacimiento FROM alumno WHERE dni=? AND estado=1 ";
     PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -137,7 +137,7 @@ public class AlumnoData {
     }
     public void modificarAlumno(Alumno alumno){
         
-    String sql="UPDATE alumno SET dni =?,nombre=?,fechaNacimiento=? WHERE idAlumno ?";
+    String sql="UPDATE alumno SET dni =?,apellido=?,nombre=?,fechaNacimiento=? WHERE idAlumno=?";
     
     PreparedStatement ps = null;
     
