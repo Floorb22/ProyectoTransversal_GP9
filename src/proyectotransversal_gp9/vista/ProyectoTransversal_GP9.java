@@ -5,7 +5,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import proyectotransversal_gp9.modelo.Alumno;
 import proyectotransversal_gp9.modelo.Conexion;
+import proyectotransversal_gp9.modelo.Materia;
 import proyectotransversal_gp9.persistencia.AlumnoData;
+import proyectotransversal_gp9.persistencia.MateriaData;
 
 /**
  *
@@ -21,6 +23,8 @@ public class ProyectoTransversal_GP9 {
        //Alumno alumno3=new Alumno(23562452,"Herrera","Agustin",LocalDate.of(1996, Month.APRIL, 14),true);
        Alumno alumno4=new Alumno(4,25467383,"Fernandez","Ana",LocalDate.of(1996, Month.AUGUST, 10),true);
         AlumnoData a = new AlumnoData();
+        Materia mat1 = new Materia("Matematica", 3, true);
+        MateriaData mD = new MateriaData();
         
         /*a.guardarAlumno(alumno1);
         a.guardarAlumno(alumno2);
@@ -31,7 +35,7 @@ public class ProyectoTransversal_GP9 {
         //System.out.println(a.listarAlumno());
        //a.modificarAlumno(alumno4);
        //a.eliminarAlumno(4);
-        
+        mD.guardarMateria(mat1);
     }
     
 }
