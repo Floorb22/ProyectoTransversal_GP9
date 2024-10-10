@@ -23,7 +23,7 @@ public class ProyectoTransversal_GP9 {
        //Alumno alumno3=new Alumno(23562452,"Herrera","Agustin",LocalDate.of(1996, Month.APRIL, 14),true);
        Alumno alumno4=new Alumno(4,25467383,"Fernandez","Ana",LocalDate.of(1996, Month.AUGUST, 10),true);
         AlumnoData a = new AlumnoData();
-        Materia mat1 = new Materia("Matematica", 3, true);
+        Materia mat1 = new Materia("Lengua", 3, true);
         MateriaData mD = new MateriaData();
         
         /*a.guardarAlumno(alumno1);
@@ -35,7 +35,17 @@ public class ProyectoTransversal_GP9 {
         //System.out.println(a.listarAlumno());
        //a.modificarAlumno(alumno4);
        //a.eliminarAlumno(4);
-        mD.guardarMateria(mat1);
+        //mD.guardarMateria(mat1);
+        //mD.modificarMateria(mat1);
+        //System.out.println(mD.buscarMateria(1));
+        
+        mD.borrarMateria(2);
+        
+        for (Materia m : mD.listarMateria()) {
+            System.out.println(m);
+        }
+        
+        
     }
     
 }
