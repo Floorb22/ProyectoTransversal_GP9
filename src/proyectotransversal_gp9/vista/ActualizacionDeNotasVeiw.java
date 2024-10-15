@@ -179,7 +179,7 @@ public class ActualizacionDeNotasVeiw extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void cargarCombo() {
-        List<Alumno> alumnos = al.ListarAlumnos();
+        List<Alumno> alumnos = al.listarAlumno();
         for (Alumno alum : alumnos) {
 
             jcbAlumnos.addItem(alum);
