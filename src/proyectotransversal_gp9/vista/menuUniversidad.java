@@ -39,7 +39,7 @@ public class menuUniversidad extends javax.swing.JFrame {
 
         fondoMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo15/vistas/fondo_menu.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotransversal_gp9/imagenes/fondo_menu.jpg")));
         fondoMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         escritorio.setLayer(fondoMenu, javax.swing.JLayeredPane.DEFAULT_LAYER);

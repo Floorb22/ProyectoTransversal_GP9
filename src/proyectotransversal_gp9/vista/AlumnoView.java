@@ -130,7 +130,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 87, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidadgrupo15/vistas/alumno1.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotransversal_gp9/imagenes/alumno1.png")));
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 140, 150));
         jPanel1.add(jTFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
 

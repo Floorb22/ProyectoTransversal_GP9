@@ -19,8 +19,10 @@ import proyectotransversal_gp9.modelo.Materia;
  * @author analf
  */
 public class InscripcionData {
-
+    
     private Connection con = null;
+    private MateriaData md = new MateriaData();
+    private AlumnoData ad = new AlumnoData();
 
     public InscripcionData() {
 
@@ -29,7 +31,7 @@ public class InscripcionData {
 
     public void guardarInscripcion(Inscripcion insc) {
 
-        String sql = "INSERT TO inscripcion (idAlumno, idMateria, nota) VALUES ( ?, ? ,? )";
+        String sql = "INSERT INTO inscripcion (idAlumno, idMateria, nota) VALUES ( ?, ? ,? )";
 
         try {
             java.sql.PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -52,7 +54,7 @@ public class InscripcionData {
     }
 
     public void actualizarNota(int idAlumno, int idMateria, double nota) throws SQLException {
-        String sql = "UPDATE inscripcion SET nota = ? WHERE idAlumno ? and idMateria";
+        String sql = "UPDATE inscripcion SET nota = ? WHERE idAlumno = ? and idMateria = ?";
 
         try {
             java.sql.PreparedStatement ps = con.prepareStatement(sql);
@@ -106,8 +108,8 @@ public class InscripcionData {
             while (rs.next()) {
                 Inscripcion insc = new Inscripcion();
                 insc.setIdInscripcion(rs.getInt("idInscripto"));
-                Alumno alu = alu.buscarAlumno(rs.getInt("idAlumno"));
-                Materia mat = mat.buscarMateria(rs.getInt("idMateria"));
+                Alumno alu = ad.buscarAlumno(rs.getInt("idAlumno"));
+                Materia mat = md.buscarMateria(rs.getInt("idMateria"));
                 insc.setAlumno(alu);
                 insc.setMateria(mat);
                 insc.setNota(rs.getDouble("nota"));
@@ -136,10 +138,10 @@ public class InscripcionData {
             while (rs.next()) {
                 Inscripcion insc = new Inscripcion();
                 insc.setIdInscripcion(rs.getInt("idInscripto"));
-                AlumnoData ad = ad.buscarAlumno((rs.getInt("idAlumno")));
-                MateriaData md = md.buscarMateria(rs.getInt("idMateria"));
-                insc.setAlumno(ad);
-                insc.setMateria(dm);
+                Alumno al = ad.buscarAlumno((rs.getInt("idAlumno")));
+                Materia ma = md.buscarMateria(rs.getInt("idMateria"));
+                insc.setAlumno(al);
+                insc.setMateria(ma);
                 insc.setNota(rs.getDouble("nota"));
                 cursadas.add(insc);
 
@@ -232,8 +234,8 @@ JOptionPane.showMessageDialog (null, "Error al acceder a la tabla");
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setActivo(rs.getBoolean("estado"));
-                alumnoMateria.add(alumno);
+                alumno.setEstado(rs.getBoolean("estado"));
+                alumnosMateria.add(alumno);
             }
 
             ps.close();
