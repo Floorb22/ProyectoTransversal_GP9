@@ -54,11 +54,11 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Formulario de Inscripcion");
         jLabel1.setToolTipText("frf");
@@ -80,7 +80,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Listado de Materias");
 
-        rb_materiasinscriptas.setBackground(new java.awt.Color(204, 204, 204));
+        rb_materiasinscriptas.setBackground(new java.awt.Color(0, 153, 51));
         rb_materiasinscriptas.setForeground(new java.awt.Color(0, 0, 0));
         rb_materiasinscriptas.setText("Materias Inscriptas");
         rb_materiasinscriptas.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
             }
         });
 
-        rb_materiasnoinscriptas.setBackground(new java.awt.Color(204, 204, 204));
+        rb_materiasnoinscriptas.setBackground(new java.awt.Color(0, 153, 51));
         rb_materiasnoinscriptas.setForeground(new java.awt.Color(0, 0, 0));
         rb_materiasnoinscriptas.setText("Materias no inscriptas");
 
