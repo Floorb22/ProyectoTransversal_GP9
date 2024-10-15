@@ -7,7 +7,7 @@ public class menuUniversidad extends javax.swing.JFrame {
      * Creates new form menuUniversidad
      */
     public menuUniversidad() {
-        initComponents();
+     //   initComponents();
     }
 
     /**
