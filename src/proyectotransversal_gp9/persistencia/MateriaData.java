@@ -140,12 +140,12 @@ public class MateriaData {
             ps.close();
             
             if (borrado >=1 ) {
-                JOptionPane.showMessageDialog(null, "Ciudad borrada exitosamente");
+                JOptionPane.showMessageDialog(null, "Materia borrada exitosamente");
                 
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al borrar la ciudad");
+            JOptionPane.showMessageDialog(null, "Error al borrar la Materia");
 
         }
 
