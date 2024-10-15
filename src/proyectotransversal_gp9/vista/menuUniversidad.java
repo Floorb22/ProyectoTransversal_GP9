@@ -166,10 +166,10 @@ public class menuUniversidad extends javax.swing.JFrame {
         escritorio.removeAll();
         escritorio.repaint();
         fondoMenu();
-        /*MateriaView mv = new MateriaView();
+        MateriaView mv = new MateriaView();
         mv.setVisible(true);
         escritorio.add(mv);
-        escritorio.moveToFront(mv);*/
+        escritorio.moveToFront(mv);
     }//GEN-LAST:event_jMenuItemMateriaActionPerformed
 
     private void ConsultaAlumnoMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaAlumnoMateriaActionPerformed
