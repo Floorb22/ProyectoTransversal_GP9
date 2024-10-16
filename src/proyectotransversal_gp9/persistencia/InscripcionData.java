@@ -169,7 +169,7 @@ public class InscripcionData {
     public List<Materia> obtenerMateriasCursadas(int idAlumno) {
         ArrayList<Materia> materias = new ArrayList<>();
 
-        String sql = "SELECT inscripcion.idMateria, nombre, año FROM inscripcion," + " materia WHERE inscripcion.idMateria = materia.idMateria" + "AND inscripcion.idAlumno = ?;";
+        String sql = "SELECT inscripcion.idMateria, nombre, año FROM inscripcion," + " materia WHERE inscripcion.idMateria = materia.idMateria" + " AND inscripcion.idAlumno = ?;";
 
         try {
             java.sql.PreparedStatement ps = con.prepareStatement(sql);
@@ -227,7 +227,9 @@ public class InscripcionData {
 
         ArrayList<Alumno> alumnosMateria = new ArrayList<>();
 
-        String sql = "SELECT a.idAlumno, dni, nombre, apellido, fechaNacimiento, estado" + "FROM inscripcion i, alumno a WHERE i.idAlumno = a.idAlumno AND idMaterias = ? AND a.estado = 1";
+String sql = "SELECT a.idAlumno, dni, nombre, apellido, fechaNacimiento, estado " +
+             "FROM inscripcion i, alumno a WHERE i.idAlumno = a.idAlumno " +
+             "AND idMateria = ? AND a.estado = 1";
 
         try {
             java.sql.PreparedStatement ps = con.prepareStatement(sql);
@@ -238,6 +240,7 @@ public class InscripcionData {
                 alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
+                alumno.setDni(rs.getInt("dni"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(rs.getBoolean("estado"));
                 alumnosMateria.add(alumno);

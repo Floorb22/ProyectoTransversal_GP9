@@ -1,5 +1,6 @@
 package proyectotransversal_gp9.vista;
 
+import java.sql.SQLException;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import proyectotransversal_gp9.persistencia.AlumnoData;
@@ -142,9 +143,12 @@ public class ActualizacionDeNotasVeiw extends javax.swing.JInternalFrame {
         int idAlu = ((Alumno)jcbAlumnos.getSelectedItem()).getIdAlumno();
         int idMat = (Integer)jtMaterias.getValueAt(matSelec, 0);
         int nota = jcbNota.getSelectedIndex();
-        
+       try{
         ind.actualizarNota(idAlu, idMat, nota);
-        
+       }catch(SQLException ex){
+       
+       
+       }
         cargarTabla();
     }//GEN-LAST:event_jbGuardarActionPerformed
 

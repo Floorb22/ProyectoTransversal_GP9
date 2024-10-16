@@ -1,10 +1,12 @@
-package universidadgrupo15.vistas;
+package proyectotransversal_gp9.vista;
 
 import java.util.*;
 
 import javax.swing.table.DefaultTableModel;
-import universidadgrupo15.accesoaDatos.*;
-import universidadgrupo15.entidades.*;
+import proyectotransversal_gp9.modelo.*;
+import proyectotransversal_gp9.persistencia.*;
+
+
 
 public class ConsultaAlumnoxMateria extends javax.swing.JInternalFrame {
 
@@ -29,7 +31,7 @@ public class ConsultaAlumnoxMateria extends javax.swing.JInternalFrame {
 
     private void llenarCombo() {
         MateriaData mt = new MateriaData();
-        List<Materia> lm = mt.listarMaterias();
+        List<Materia> lm = mt.listarMateria();
 
         for (Materia mate : lm) {
             materiasListadas.addItem(mate);

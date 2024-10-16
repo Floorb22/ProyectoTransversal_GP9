@@ -7,7 +7,7 @@ public class menuUniversidad extends javax.swing.JFrame {
      * Creates new form menuUniversidad
      */
     public menuUniversidad() {
-     //   initComponents();
+        initComponents();
     }
 
     /**
@@ -144,21 +144,21 @@ public class menuUniversidad extends javax.swing.JFrame {
         escritorio.removeAll();
         escritorio.repaint();
         fondoMenu();
-        /*ManejoInscripcionesView miv = new ManejoInscripcionesView();
+        FormularioInscripcionView miv = new FormularioInscripcionView();
         miv.setVisible(true);
         escritorio.add(miv);
-        escritorio.moveToFront(miv);*/
+        escritorio.moveToFront(miv);
     }//GEN-LAST:event_jmiInscripcionesActionPerformed
 
     private void jmiNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNotasActionPerformed
-        // TODO add your handling code here:
+        
         escritorio.removeAll();
         escritorio.repaint();
         fondoMenu();
-       // ManipulacionNotasView mnv = new ManipulacionNotasView();
-        /*mnv.setVisible(true);
+       ActualizacionDeNotasVeiw mnv = new ActualizacionDeNotasVeiw();
+        mnv.setVisible(true);
         escritorio.add(mnv);
-        escritorio.moveToFront(mnv);*/
+        escritorio.moveToFront(mnv);
     }//GEN-LAST:event_jmiNotasActionPerformed
 
     private void jMenuItemMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMateriaActionPerformed
@@ -176,10 +176,10 @@ public class menuUniversidad extends javax.swing.JFrame {
         escritorio.removeAll();
         escritorio.repaint();
         fondoMenu();
-      /*  ConsultaAlumnoxMateria cam=new ConsultaAlumnoxMateria();
+        ConsultaAlumnoxMateria cam=new ConsultaAlumnoxMateria();
         cam.setVisible(true);
         escritorio.add(cam);
-        escritorio.moveToFront(cam);*/
+        escritorio.moveToFront(cam);
 
     }//GEN-LAST:event_ConsultaAlumnoMateriaActionPerformed
 

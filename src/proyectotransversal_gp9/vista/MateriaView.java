@@ -195,7 +195,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
     private void jBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNuevoActionPerformed
 
         try {
-            int cod = Integer.parseInt(jTextCodigo.getText());
+            
 
             String nombre = jTextNombre.getText();
             int anio = Integer.parseInt(jTextAnio.getText());
@@ -203,7 +203,7 @@ public class MateriaView extends javax.swing.JInternalFrame {
             mD.guardarMateria(materia);
         } catch (NumberFormatException ex) {
 
-            JOptionPane.showMessageDialog(null, "Debe ingresar un numero");
+            
 
         }
 

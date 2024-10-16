@@ -74,11 +74,23 @@ public class AlumnoView extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Apellido:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+
+        jTDocumento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTDocumentoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jTDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, 20));
+
+        jTNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -120,6 +132,12 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jTEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
+
+        jTApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTApellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jTApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, -1));
 
         jBLimpiar.setText("Limpiar");
@@ -201,7 +219,7 @@ public class AlumnoView extends javax.swing.JInternalFrame {
             jTFecha.setDate(Date.valueOf(a.getFechaNac()));
             jTEstado.setSelected(a.isEstado());
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "no existe alumno");
+            
         }
 
 
@@ -220,6 +238,30 @@ public class AlumnoView extends javax.swing.JInternalFrame {
     private void jBModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBModificar1ActionPerformed
+
+    private void jTDocumentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTDocumentoKeyTyped
+        char validar = evt.getKeyChar();
+        if (Character.isLetter(validar)) {
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTDocumentoKeyTyped
+
+    private void jTApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTApellidoKeyTyped
+        char validar = evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTApellidoKeyTyped
+
+    private void jTNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTNombreKeyTyped
+        char validar = evt.getKeyChar();
+        if (Character.isDigit(validar)) {
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTNombreKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
