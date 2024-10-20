@@ -52,23 +52,19 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         b_anular = new javax.swing.JButton();
         b_salir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 51));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Formulario de Inscripcion");
         jLabel1.setToolTipText("frf");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Seleccione un alumno:");
 
         cb_alumno.setBackground(new java.awt.Color(204, 204, 204));
-        cb_alumno.setForeground(new java.awt.Color(0, 0, 0));
         cb_alumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_alumnoActionPerformed(evt);
@@ -76,12 +72,10 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Listado de Materias");
 
         rb_materiasinscriptas.setBackground(new java.awt.Color(0, 153, 51));
-        rb_materiasinscriptas.setForeground(new java.awt.Color(0, 0, 0));
         rb_materiasinscriptas.setText("Materias Inscriptas");
         rb_materiasinscriptas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,11 +84,14 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         });
 
         rb_materiasnoinscriptas.setBackground(new java.awt.Color(0, 153, 51));
-        rb_materiasnoinscriptas.setForeground(new java.awt.Color(0, 0, 0));
         rb_materiasnoinscriptas.setText("Materias no inscriptas");
+        rb_materiasnoinscriptas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_materiasnoinscriptasActionPerformed(evt);
+            }
+        });
 
         t_materias.setBackground(new java.awt.Color(204, 204, 204));
-        t_materias.setForeground(new java.awt.Color(0, 0, 0));
         t_materias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -111,7 +108,6 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
 
         b_inscribir.setBackground(new java.awt.Color(204, 204, 204));
         b_inscribir.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        b_inscribir.setForeground(new java.awt.Color(0, 0, 0));
         b_inscribir.setText("Inscribir");
         b_inscribir.setEnabled(false);
         b_inscribir.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +118,6 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
 
         b_anular.setBackground(new java.awt.Color(204, 204, 204));
         b_anular.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        b_anular.setForeground(new java.awt.Color(0, 0, 0));
         b_anular.setText("Anular Inscripcion");
         b_anular.setEnabled(false);
         b_anular.addActionListener(new java.awt.event.ActionListener() {
@@ -133,8 +128,12 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
 
         b_salir.setBackground(new java.awt.Color(204, 204, 204));
         b_salir.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        b_salir.setForeground(new java.awt.Color(0, 0, 0));
         b_salir.setText("Salir");
+        b_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,11 +212,11 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
 
     private void rb_materiasinscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_materiasinscriptasActionPerformed
         borrarFilaTabla();
-        rb_materiasnoinscriptas.setSelected(false);
+        
         cargaDatosInscriptas();
         b_anular.setEnabled(true);
         b_inscribir.setEnabled(false);
-        
+        rb_materiasnoinscriptas.setSelected(false);
     }//GEN-LAST:event_rb_materiasinscriptasActionPerformed
 
     private void cb_alumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_alumnoActionPerformed
@@ -240,6 +239,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
             Inscripcion i= new Inscripcion(a,m,0);
             inscData.guardarInscripcion(i);
             borrarFilaTabla();
+            cargaDatosNoInscriptas();
         }
     }//GEN-LAST:event_b_inscribirActionPerformed
 
@@ -254,6 +254,19 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_b_anularActionPerformed
+
+    private void rb_materiasnoinscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_materiasnoinscriptasActionPerformed
+        borrarFilaTabla();
+        
+        cargaDatosNoInscriptas();
+        b_anular.setEnabled(false);
+        b_inscribir.setEnabled(true);
+        rb_materiasinscriptas.setSelected(false);       
+    }//GEN-LAST:event_rb_materiasnoinscriptasActionPerformed
+
+    private void b_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_salirActionPerformed
+        dispose();
+    }//GEN-LAST:event_b_salirActionPerformed
 
     
     
@@ -283,7 +296,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
     }
     
     private void cargaDatosNoInscriptas(){
-        //borrarFilasTabla();
+        borrarFilaTabla();
         Alumno selec = (Alumno) cb_alumno.getSelectedItem();
         listaM = (ArrayList) inscData.ObtenerMateriasNoCursadas(selec.getIdAlumno());
         for (Materia m: listaM){
@@ -292,7 +305,7 @@ public class FormularioInscripcionView extends javax.swing.JInternalFrame {
     }
     
     private void cargaDatosInscriptas(){
-        //borrarFilasTabla();
+        borrarFilaTabla();
         Alumno selec = (Alumno) cb_alumno.getSelectedItem();
         List <Materia> lista = (ArrayList) inscData.obtenerMateriasCursadas(selec.getIdAlumno());
         for (Materia m: lista){
